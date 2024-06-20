@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/transactions
+    username: kariuki
+    password: Password1!
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 5004
+application:
+  config:
+    accounts-url: http://localhost:8888/api/v2/accounts
+    loans-url: http://localhost:8888/api/v1/loans

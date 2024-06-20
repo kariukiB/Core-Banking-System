@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: accounts-service
+          uri: lb:http://ACCOUNTS-SERVICE
+          predicates:
+            - Path=/api/v2/accounts/**
+        - id: transactions-service
+          uri: lb:http://TRANSACTIONS-SERVICE
+          predicates:
+            - Path=/api/v2/transactions/**
+        - id: loans-service
+          uri: lb:http://LOANS-SERVICE
+          predicates:
+            - Path=/api/v1/loans/**
+server:
+  port: 8888
